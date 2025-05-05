@@ -1,8 +1,9 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 
-void pagMath();
+void aritmetica();
 void suma();
 void resta();
 void multi();
@@ -10,10 +11,14 @@ void divi();
 void modulo();
 void tablaM();
 void areaC();
-void mantener();
+void mantenerM();
 void mayornum();
-void pagC();
+void geometria();
 void promedio();
+void mantenerP();
+void hipotenusa();
+void potencia();
+void sqroot();
 
 int opcionP = 0;
 
@@ -24,32 +29,36 @@ cout<<"*************************************************************************
 cout<<"                                  QL Obsidian \n";
 cout<<"********************************************************************************* \n";
 cout<<"                                     PAGINAS                                      \n";
-cout<<"                              1-Math      2-Science \n";
+cout<<"                         1-Aritmetics      2-Geometry \n  -1 para terminar \n";
 cin>>opcionP;
 
 if(opcionP == 1){
-	pagMath();
+	aritmetica();
 	}
 if(opcionP == 2){
-	pagC();
+	geometria();
+	}
+if(opcionP == -1){
+	system("clear");
 	}
 
 
 }
 
-void pagMath(){
+void aritmetica(){
 	
 	system("clear");
-	cout<<"	                               MATH \n";
+	cout<<"	                               Aritmetics \n";
 	cout<<"1-Suma \n";
 	cout<<"2-Resta \n";
 	cout<<"3-Multiplicacion \n";
 	cout<<"4-Division \n";
 	cout<<"5-Modulo \n";
 	cout<<"6-Tabla de Multiplicar \n";
-	cout<<"7-Area de Un Circulo \n";
-	cout<<"8-El Numero Mayor de 3 Numeros \n";
-	cout<<"9-Para el promedio de NUmeros \n";
+	cout<<"7-El Numero Mayor de 3 Numeros \n";
+	cout<<"8-Para el promedio de NUmeros \n";
+	cout<<"9-la potencia de n \n";
+	cout<<"10-La Raiz Quadrada \n";
 	cout<<"-1 Para Volver \n";
 	cin>>opcionP;
 	switch(opcionP)
@@ -67,18 +76,33 @@ void pagMath(){
 	switch(opcionP)
 		case -1 : main();
 	switch(opcionP)
-		case 7:areaC();
+		case 7:mayornum();
 	switch(opcionP)
-		case 8:mayornum();
+		case 8:promedio();
 	switch(opcionP)
-		case 9:promedio();
+		case 9:potencia();
+	switch(opcionP)
+		case 10: sqroot();
 	}
 	
-void pagC(){
-	cout<<"Hello World";
+void geometria(){
+	system("clear");
+	cout<<"                         Geometry \n";
+	cout<<"1-Area de un Circulo \n";
+	cout<<"2-Hipotenusa \n";
+	cout<<"EN MANTENIMIENTO \n";
+	cout<<"-1 - Para ir atras \n";
+	cin>>opcionP;
+	switch(opcionP)
+		case 1: areaC();
+	switch(opcionP)
+	case 2: hipotenusa();
+	switch(opcionP)
+		case -1: main();
 	}
 
 void suma(){
+	system("clear");
 	double resultado, num1, num2;
 	cout<<"Ingresa el Primer numero: ";
 	cin>>num1;
@@ -86,10 +110,11 @@ void suma(){
 	cin>>num2;
 	resultado = num1 + num2;
 	cout<<"La respuesta es: "<<resultado<<endl;
-	mantener();
+	mantenerM();
 	}
 	
 void resta(){
+	system("clear");
 	double resultado, num1, num2;
 	cout<<"Ingresa el Primer numero: ";
 	cin>>num1;
@@ -97,10 +122,11 @@ void resta(){
 	cin>>num2;
 	resultado = num1 - num2;
 	cout<<"La respuesta es: "<<resultado<<endl;
-	mantener();
+	mantenerM();
 	}
 	
 void multi(){
+	system("clear");
 	double resultado, num1, num2;
 	cout<<"Ingresa el Primer numero: ";
 	cin>>num1;
@@ -108,10 +134,11 @@ void multi(){
 	cin>>num2;
 	resultado = num1 * num2;
 	cout<<"La respuesta es: "<<resultado<<endl;
-	mantener();
+	mantenerM();
 	}
 	
 void divi(){
+	system("clear");
 	double resultado, num1, num2;
 	cout<<"Ingresa el Primer numero: ";
 	cin>>num1;
@@ -119,10 +146,11 @@ void divi(){
 	cin>>num2;
 	resultado = num1 / num2;
 	cout<<"La respuesta es: "<<resultado<<endl;
-	mantener();
+	mantenerM();
 }
 
 void modulo(){
+	system("clear");
 int resultado, num1, num2;
 	cout<<"Ingresa el Primer numero: ";
 	cin>>num1;
@@ -130,10 +158,11 @@ int resultado, num1, num2;
 	cin>>num2;
 	resultado = num1 % num2;
 	cout<<"La respuesta es: "<<resultado<<endl;
-	mantener();
+	mantenerM();
 	}
 	
 void tablaM(){
+	system("clear");
 	int ent;
 	cout<<"Ingresa el entero que deseas hacer la tabla de multiplicar \n";
 cin>>ent;
@@ -150,22 +179,24 @@ cout<<"7 * "<<ent<<" = "<< 7 * ent <<endl;
 cout<<"8 * "<<ent<<" = "<< 8 * ent <<endl;
 cout<<"9 * "<<ent<<" = "<< 9 * ent <<endl;
 cout<<"10 * "<<ent<<" = "<< 10 * ent <<endl;
-mantener();
+mantenerM();
 	}
 	
 void areaC(){
+	system("clear");
 int radio;
-double pi=3.14159265359, result;
-cout<<"Este es un programa en C++ que calcula \n El Area de un Circulo \n";
+const double PI=3.14159265359;
+double result;
 cout<<"Dame el Radio: \n";
 cin>>radio;
-result = pi *(radio * radio);
+result = PI *(radio * radio);
 cout<<"El resultado es: \n";
-cout<<result;
-mantener();
+cout<<result<<endl;
+mantenerP();
 	}
 	
 void mayornum(){
+	system("clear");
 	int num1, num2,num3;
 	
 cout<<"Este programa diseñado en C++ te dice que numero es mas grande \n";
@@ -185,7 +216,7 @@ else if (num2 > num1 and num2 > num3){
 else if (num3 > num1 and num3 > num2){
 	cout<<"En numero mas grande fue:"<<num3<<endl;
 	}
-mantener();
+mantenerM();
 	}
 	
 void promedio() {
@@ -214,25 +245,88 @@ void promedio() {
         std::cout << "No se ingresaron números para calcular el promedio." << std::endl;
         
     }
-    mantener();
+    mantenerM();
 }
 
-void mantener(){
+void mantenerM(){
 	int seguir;
-	cout<<"Volver (1/SI  2/NO)";
+	cout<<"Volver (1/SI  -1/NO)";
 	cin>>seguir;
 	if(seguir == 1){
 		cout<<"1-Menu \n";
-		cout<<"2-Math \n";
+		cout<<"2-Aritmetics \n";
 		cin>>seguir;
 		if(seguir == 1){
 			main();
 			}
 		if(seguir == 2){
-			pagMath();
+			aritmetica();
 			}
 		}
-	if(seguir == 2){
+	if(seguir == -1){
+		cout<<"Cerrando Programa";
+		system("clear");
+		}
+	}
+	
+void hipotenusa(){
+	system("clear");
+double c, a, b, d;
+cout<<"Basado en c2 = a2 + b2 \n";
+cout<<"Ingresa porfa A ";
+cin>>a;
+cout<<"Ingresa B ";
+cin>>b;
+a = pow(a,2);
+cout<<"A elevado a la dos es: "<<a<<endl;
+b = pow(b,2);
+cout<<"B elevado a la dos es: "<<b<<endl;
+d = a + b;
+cout<<"Y a + b: "<<d<<endl;
+ c = sqrt(d);
+cout<<"Y despues calculamos la raiz cuadrada de "<<d<<" que es: "<<c<<endl;
+cout<<"La hipotenusa es de: "<<c<<endl;
+mantenerP();
+}
+
+void potencia(){
+	system("clear");
+double x, n;
+cout<<"Ingresa a x (el numero base) \n";
+cin>>x;
+cout<<"Ingresa n (el elevador) \n";
+cin>>n;
+x = pow(x,n);
+cout<<"El resultado es: "<<x<<endl;
+mantenerP();
+}
+
+void sqroot(){
+	double x,r;
+cout<<"Ingresa el valor a calcular: ";
+cin>>x;
+r = sqrt(x);
+cout<<"El resultado es: "<<r<<endl;
+mantenerM();
+}
+
+	
+void mantenerP(){
+	int seguir;
+	cout<<"Volver (1/SI  -1/NO)";
+	cin>>seguir;
+	if(seguir == 1){
+		cout<<"1-Menu \n";
+		cout<<"2-Geometria \n";
+		cin>>seguir;
+		if(seguir == 1){
+			main();
+			}
+		if(seguir == 2){
+			geometria();
+			}
+		}
+	if(seguir == -1){
 		cout<<"Cerrando Programa";
 		system("clear");
 		}
