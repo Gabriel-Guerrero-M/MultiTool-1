@@ -1,4 +1,6 @@
 # MathMultitool (C++)
+![Negro y Blanco Moderno Vintage Farmacia Reapertura Comercial Horizontal Cartel](https://github.com/user-attachments/assets/92862da3-7c10-41ac-8a9f-d6c88627b474)
+
 
 Una herramienta multifuncional de matemáticas desarrollada en C++ con funcionalidades de Aritmética y Geometría.
 
